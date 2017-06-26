@@ -1,7 +1,7 @@
 {% from "chronograf/map.jinja" import chronograf with context %}
 
 chronograf-service:
-  service.running:
+  service.{{ 'running' if chronograf.enabled else 'dead' }}:
     - name: chronograf
     - enable: {{ chronograf.enabled }}
     - watch:
