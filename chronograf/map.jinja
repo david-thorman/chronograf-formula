@@ -6,11 +6,6 @@
       'source_url': 'https://dl.influxdata.com/chronograf/releases/chronograf_',
       'source_hash': '1c3374f3b085d78b7c16323812eb6c44ce29dbb5efadae98129c7c2b19b1076c',
     },
-    'RedHat': {
-      'pkgsuffix': '.x86_64.rpm',
-      'source_url': 'https://dl.influxdata.com/chronograf/releases/chronograf-',
-      'source_hash': '3fe7490e1112ce5952b8b3ec97b741be129d4649d2d2957f650feaf139b4bba0',
-    }
   }
   , grain="os_family"
   , merge=salt['pillar.get']('chronograf:lookup'))
