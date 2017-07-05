@@ -12,6 +12,22 @@ chronograf-init:
     - require:
       - sls: chronograf.install
 
+chronograf-boltdb:
+  file.managed:
+    - name: {{ chronograf.environment.bolt_path }}
+    - mode: 640
+    - owner: chronograf
+    - group: chronograf
+    - makedirs: True
+
+chronograf-cannedpath:
+  file.directory:
+    - name: {{ chronograf.environment.canned_path }}
+    - mode: 755
+    - owner: chronograf
+    - group: chronograf
+    - makedirs: True
+
 chronograf-config:
   file.managed:
     - name: /etc/default/chronograf
