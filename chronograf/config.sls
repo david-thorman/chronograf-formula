@@ -16,15 +16,16 @@ chronograf-boltdb:
   file.managed:
     - name: {{ chronograf.environment.bolt_path }}
     - mode: 640
-    - owner: chronograf
+    - user: chronograf
     - group: chronograf
     - makedirs: True
+    - replace: False
 
 chronograf-cannedpath:
   file.directory:
     - name: {{ chronograf.environment.canned_path }}
     - mode: 755
-    - owner: chronograf
+    - user: chronograf
     - group: chronograf
     - makedirs: True
 
