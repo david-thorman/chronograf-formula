@@ -28,6 +28,9 @@ chronograf-cannedpath:
     - user: chronograf
     - group: chronograf
     - makedirs: True
+    - recurse:
+      - user
+      - group
 
 chronograf-config:
   file.managed:
