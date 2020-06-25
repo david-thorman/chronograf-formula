@@ -7,7 +7,7 @@ chronograf-init:
     - source: salt://chronograf/files/chronograf_init.sh
     - mode: 555
     - context:
-        chronograf: {{ chronograf }}
+        chronograf: {{ chronograf|json }}
     - template: jinja
     - require:
       - sls: chronograf.install
@@ -38,7 +38,7 @@ chronograf-config:
     - source: salt://chronograf/files/chronograf_env.sh
     - mode: 644
     - context:
-        chronograf: {{ chronograf }}
+        chronograf: {{ chronograf|json }}
     - template: jinja
     - require:
       - sls: chronograf.install
